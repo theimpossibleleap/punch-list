@@ -10,6 +10,7 @@ function App() {
 
   const handleAdd = (e) => {
     e.preventDefault();
+    if (!inputItem) return
     setList([...list, inputItem])
     setInputItem('')
     inputRef.current.value = '';
