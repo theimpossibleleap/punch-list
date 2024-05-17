@@ -1,0 +1,63 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 0 auto;
+    min-height: 500px;
+    margin: 50px;
+}
+
+.title { 
+    margin: 0 0 50px 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-size: 4em;
+}
+
+.input {
+    margin: 0 15px 15px 0;
+    padding: 10px;
+    width: 350px;
+    font-size: 0.85em;
+}
+
+.button {
+    margin: 0 15px 0 0;
+}
+
+.listContainer {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.listItem {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.2);
+}
