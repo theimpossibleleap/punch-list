@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import './App.css'
+import Markdown from 'react-markdown'
 
 function App() {
 
@@ -34,9 +35,13 @@ function App() {
   return (
     <>
       <div id='container'>
-        <h1 className="title">Punch List</h1>
-
-        <form>
+        <div className="title">Punch List</div>
+        <div className='subHeader'>
+          <Markdown>
+            This is a **Punch List**. Only check things off that are sufficiently ***PUNCHED OFF THE LIST***. Checking items is a destructive action, there is no going back. It's like.. literally punching someone. **You can not unpunch someone**.. But don't punch people. Just punch the list.. you can also use Markdown for your punch list input. **Go nuts**!
+          </Markdown>
+        </div>
+        <form className='inputForm'>
           <input 
             className='input'
             placeholder='Add an item...'
@@ -44,6 +49,9 @@ function App() {
             id="item"
             onChange={(e) => setInputItem(e.target.value)}
             ref={inputRef}
+            autoCapitalize='off'
+            autoCorrect='off'
+            spellCheck='false'
           >
           </input>
 
@@ -53,15 +61,19 @@ function App() {
           <button className='button' onClick={handleClear}>
             Clear List
           </button>
+          <hr className='hr'/>
         </form>
-
-        <ul>
+        <ul className='list'>
           {list.map((item, index) => (
             <div key={Math.random()}>
               <div className='listContainer'>
                   <input type="checkbox" onClick={() => handleDelete(index)}/>
                   <li className='listItem'>
-                    {item}
+                    
+                    <Markdown>
+                      {item}
+                    </Markdown>
+
                   </li>
               </div>
             </div>
@@ -71,7 +83,7 @@ function App() {
           {completed.map((item, index) => (
             <div key={Math.random()}>
               <div className='listContainer'>
-              <input type="checkbox" disabled/>
+              <input type="checkbox" checked/>
                   <li className='listItem'>
                     {item}
                   </li>
