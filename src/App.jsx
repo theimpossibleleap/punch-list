@@ -54,20 +54,21 @@ function App() {
             spellCheck='false'
           >
           </input>
-
-          <button className='button' onClick={handleAdd}>
+          <div className='buttonContainer'>
+        <button className='button' onClick={handleAdd} tabIndex={0}>
             Add Item
           </button>
-          <button className='button' onClick={handleClear}>
+          <button className='button' onClick={handleClear} tabIndex={0}>
             Clear List
           </button>
-          <hr className='hr'/>
+        </div>
         </form>
+          <hr className='hr'/>
         <ul className='list'>
           {list.map((item, index) => (
             <div key={Math.random()}>
               <div className='listContainer'>
-                  <input type="checkbox" onClick={() => handleDelete(index)}/>
+                  <input type="checkbox" tabIndex={0} onClick={() => handleDelete(index)}/>
                   <li className='listItem'>
                     
                     <Markdown>
@@ -83,9 +84,11 @@ function App() {
           {completed.map((item, index) => (
             <div key={Math.random()}>
               <div className='listContainer'>
-              <input type="checkbox" checked/>
+              <input type="checkbox" tabIndex={0} defaultChecked />
                   <li className='listItem'>
-                    {item}
+                  <Markdown>
+                      {item}
+                  </Markdown>
                   </li>
               </div>
             </div>
