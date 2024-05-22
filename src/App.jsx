@@ -32,6 +32,11 @@ function App() {
     inputRef.current.value = '';
   }
 
+  const handleClearComplete = (e) => {
+    e.preventDefault();
+    setComplete([])
+  }
+
   return (
     <>
       <div id='container'>
@@ -55,11 +60,14 @@ function App() {
           >
           </input>
           <div className='buttonContainer'>
-        <button className='button' onClick={handleAdd} tabIndex={0}>
+          <button className='button' onClick={handleAdd} tabIndex={0}>
             Add Item
           </button>
+          <button className='button' onClick={handleClearComplete} tabIndex={0}>
+            Clear Completed
+          </button>
           <button className='button' onClick={handleClear} tabIndex={0}>
-            Clear List
+            Clear All
           </button>
         </div>
         </form>
