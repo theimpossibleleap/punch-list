@@ -60,13 +60,13 @@ function App() {
           >
           </input>
           <div className='buttonContainer'>
-          <button className='button' onClick={handleAdd} tabIndex={0}>
+          <button className='button' onClick={handleAdd} tabIndex={0} {...{disabled: !inputItem}}>
             Add Item
           </button>
-          <button className='button' onClick={handleClearComplete} tabIndex={0}>
+          <button className='button' onClick={handleClearComplete} tabIndex={0} {...{disabled: !completed.length}}>
             Clear Completed
           </button>
-          <button className='button' onClick={handleClear} tabIndex={0}>
+          <button className='button' onClick={handleClear} tabIndex={0} {...{disabled: !list.length}}>
             Clear All
           </button>
         </div>
