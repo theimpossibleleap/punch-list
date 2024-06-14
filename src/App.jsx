@@ -40,11 +40,31 @@ function App() {
   return (
     <>
       <div id='container'>
-        <div className="title">Punch List</div>
+        <div className="title">Punch List 🥊</div>
         <div className='subHeader'>
           <Markdown>
             This is a **Punch List**. Only check things off that are sufficiently ***PUNCHED OFF THE LIST***. Checking items is a destructive action, there is no going back. It's like.. literally punching someone. **You can not unpunch someone**.. But don't punch people. Just punch the list.. you can also use Markdown for your punch list input. **Go nuts**!
           </Markdown>
+          <div style={{ marginTop: '50px' }} />
+          <Markdown>
+            # Examples
+          </Markdown>
+          <Markdown>
+            ## Use \'#\' to make things headers for *emphasis*!
+          </Markdown>
+          <Markdown>
+            Maybe just **bold** some characters by wrapping \** around a word?
+          </Markdown>
+          <Markdown>
+            `var maybe = 'code is needed- wrap your text in backticks';`   
+          </Markdown>
+          <Markdown>
+            Or even just `oneLittleSection`
+          </Markdown>
+          <Markdown>
+            You can even use [links](https://www.markdownguide.org) to remind yourself of some stuff.
+          </Markdown>
+          
         </div>
         <form className='inputForm'>
           <input 
